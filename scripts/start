@@ -14,7 +14,7 @@ then
     cp /usr/local/etc/minecraft/ops.txt .
     cp /usr/local/etc/minecraft/white-list.txt .
     cp /usr/local/etc/minecraft/server.properties .
-    curl https://s3.amazonaws.com/Minecraft.Download/versions/1.6.4/minecraft_server.1.6.4.jar -o minecraft_server.jar
+    curl https://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/minecraft_server.1.7.2.jar -o minecraft_server.jar
 fi
 
 
