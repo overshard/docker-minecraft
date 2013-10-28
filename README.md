@@ -23,7 +23,7 @@ system you can map the port to 25565 and no proxy is needed. i.e.
 `-p=25565:25565` Also be sure your mounted directory on your host machine is
 already created before running `mkdir -p /mnt/minecraft`.
 
-    sudo docker run -p=25565:25565 -v=/mnt/minecraft:/data overshard/minecraft /start
+    sudo docker run -d=true -p=25565:25565 -v=/mnt/minecraft:/data overshard/minecraft /start
 
 From now on when you start/stop docker-minecraft you should use the container id
 with the following commands. To get your container id, after you initial run
