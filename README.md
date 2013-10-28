@@ -10,7 +10,7 @@ more information on Minecraft and check out it's [website][1].
 Running this will build you a docker image with the latest version of both
 docker-minecraft and Minecraft itself.
 
-    git clone https://github.com/overshard/docker-minecraft.git
+    git clone https://github.com/overshard/docker-minecraft
     cd docker-minecraft
     docker build -t overshard/minecraft .
 
