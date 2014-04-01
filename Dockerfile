@@ -18,15 +18,10 @@ from   ubuntu:12.04
 env    DEBIAN_FRONTEND noninteractive
 
 
-# An annoying error message keeps appearing unless you do this.
-run    dpkg-divert --local --rename --add /sbin/initctl
-run    ln -s /bin/true /sbin/initctl
-
-
 # Download and install everything from the repos.
 add    ./apt/sources.list /etc/apt/sources.list
 run    apt-get --yes update; apt-get --yes upgrade
-run	   apt-get --yes install curl openjdk-7-jre-headless supervisor pwgen
+run	   apt-get --yes install curl openjdk-7-jre-headless supervisor
 
 
 
