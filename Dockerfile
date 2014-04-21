@@ -11,7 +11,7 @@
 
 
 # Base system is the LTS version of Ubuntu.
-from   ubuntu:12.04
+from   ubuntu:13.10
 
 
 # Make sure we don't get notifications we can't answer during building.
