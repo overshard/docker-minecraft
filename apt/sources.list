@@ -1,3 +1,6 @@
-deb http://archive.ubuntu.com/ubuntu precise main universe
-deb-src http://archive.ubuntu.com/ubuntu precise main universe
-
+deb http://archive.ubuntu.com/ubuntu saucy main universe
+deb http://archive.ubuntu.com/ubuntu saucy-updates main universe
+deb http://archive.ubuntu.com/ubuntu saucy-security main universe
+deb-src http://archive.ubuntu.com/ubuntu saucy main universe
+deb-src http://archive.ubuntu.com/ubuntu saucy-updates main universe
+deb-src http://archive.ubuntu.com/ubuntu saucy-security main universe
