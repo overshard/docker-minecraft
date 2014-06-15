@@ -28,9 +28,6 @@ run	   apt-get --yes install curl openjdk-7-jre-headless supervisor
 # Load in all of our config files.
 add    ./supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 add    ./supervisor/conf.d/minecraft.conf /etc/supervisor/conf.d/minecraft.conf
-add    ./minecraft/ops.txt /usr/local/etc/minecraft/ops.txt
-add    ./minecraft/white-list.txt /usr/local/etc/minecraft/white-list.txt
-add    ./minecraft/server.properties /usr/local/etc/minecraft/server.properties
 add    ./scripts/start /start
 
 

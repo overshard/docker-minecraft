@@ -7,17 +7,6 @@
 # -----------------------------------------------------------------------------
 
 
-# Copy over the base database to our data directory if it doesn't exist
-if [ ! -f /data/minecraft_server.jar ]
-then
-    cd /data
-    cp /usr/local/etc/minecraft/ops.txt .
-    cp /usr/local/etc/minecraft/white-list.txt .
-    cp /usr/local/etc/minecraft/server.properties .
-    curl https://s3.amazonaws.com/Minecraft.Download/versions/14w11b/minecraft_server.14w11b.jar -o minecraft_server.jar
-fi
-
-
 # Run supervisor which maintains the mumble server
 /usr/bin/supervisord
 
