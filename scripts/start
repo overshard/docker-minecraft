@@ -3,10 +3,16 @@
 # docker-minecraft /start script
 #
 # Authors: Isaac Bythewood
-# Updated: Mar 31st, 2014
+# Updated: July 17th, 2014
 # -----------------------------------------------------------------------------
 
 
-# Run supervisor which maintains the mumble server
+if [ ! -f /data/minecraft_server.jar ]
+then
+    curl "https://s3.amazonaws.com/Minecraft.Download/versions/14w29b/minecraft_server.14w29b.jar" -o minecraft_server.jar
+fi
+
+
+# Run supervisor which maintains the minecraft server
 /usr/bin/supervisord
 
