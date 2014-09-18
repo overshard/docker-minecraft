@@ -3,13 +3,13 @@
 # docker-minecraft /start script
 #
 # Authors: Isaac Bythewood
-# Updated: July 17th, 2014
+# Updated: September 4th, 2014
 # -----------------------------------------------------------------------------
 
 
 if [ ! -f /data/minecraft_server.jar ]
 then
-    curl "https://s3.amazonaws.com/Minecraft.Download/versions/14w32a/minecraft_server.14w32a.jar" -o /data/minecraft_server.jar
+    curl "https://s3.amazonaws.com/Minecraft.Download/versions/1.8/minecraft_server.1.8.jar" -o /data/minecraft_server.jar
 fi
 
 
