@@ -21,8 +21,10 @@ Running the first time will set your port to a static port of your choice so
 that you can easily map a proxy to. If this is the only thing running on your
 system you can map the port to 25565 and no proxy is needed. i.e.
 `-p=25565:25565` Also be sure your mounted directory on your host machine is
-already created before running `mkdir -p /mnt/minecraft`.
+already created before running `mkdir -p /mnt/minecraft`. Before we actually
+start the machine, we are also going to agree to the EULA.
 
+    sudo docker.io run -d=true -p=25565:25565 -v=/mnt/minecraft:/data overshard/minecraft /agree_to_eula
     sudo docker.io run -d=true -p=25565:25565 -v=/mnt/minecraft:/data overshard/minecraft /start
 
 From now on when you start/stop docker-minecraft you should use the container id

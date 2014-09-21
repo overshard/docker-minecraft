@@ -1,0 +1,11 @@
+#!/bin/bash
+# -----------------------------------------------------------------------------
+# docker-minecraft /agree_to_eula script
+#
+# Authors: Christian Rohling
+# Updated: Aug 20th, 2014
+# -----------------------------------------------------------------------------
+
+
+# Agree to the EULA
+echo "eula=true" > /data/eula.txt

@@ -27,10 +27,12 @@ run	   apt-get --yes install curl openjdk-7-jre-headless supervisor
 add    ./supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 add    ./supervisor/conf.d/minecraft.conf /etc/supervisor/conf.d/minecraft.conf
 add    ./scripts/start /start
+add    ./scripts/agree_to_eula /agree_to_eula
 
 
 # Fix all permissions
 run	   chmod +x /start
+run	   chmod +x /agree_to_eula
 
 
 # 80 is for nginx web, /data contains static files and database /start runs it.
