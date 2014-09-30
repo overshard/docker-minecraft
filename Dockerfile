@@ -33,7 +33,11 @@ add    ./scripts/start /start
 run	   chmod +x /start
 
 
-# 80 is for nginx web, /data contains static files and database /start runs it.
+# 25565 is for minecraft
 expose 25565
+
+#/ data contains static files and database
 volume ["/data"]
+
+# /start runs it.
 cmd    ["/start"]
