@@ -12,7 +12,7 @@ docker-minecraft and Minecraft itself.
 
     git clone https://github.com/overshard/docker-minecraft
     cd docker-minecraft
-    sudo docker.io build -t overshard/minecraft .
+    sudo docker build -t overshard/minecraft .
 
 
 ## Running docker-minecraft
@@ -26,15 +26,15 @@ same port as well.
 Also be sure your mounted directory on your host machine is
 already created before running `mkdir -p /mnt/minecraft`.
 
-    sudo docker.io run -d=true -p=25565:25565 -v=/mnt/minecraft:/data overshard/minecraft /start
+    sudo docker run -d=true -p=25565:25565 -v=/mnt/minecraft:/data overshard/minecraft /start
 
 From now on when you start/stop docker-minecraft you should use the container id
 with the following commands. To get your container id, after you initial run
-type `sudo docker.io ps` and it will show up on the left side followed by the
+type `sudo docker ps` and it will show up on the left side followed by the
 image name which is `overshard/minecraft:latest`.
 
-    sudo docker.io start <container_id>
-    sudo docker.io stop <container_id>
+    sudo docker start <container_id>
+    sudo docker stop <container_id>
 
 
 ### Notes on the run command
