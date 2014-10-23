@@ -36,7 +36,7 @@ run	   chmod +x /start
 # 25565 is for minecraft
 expose 25565
 
-#/ data contains static files and database
+# /data contains static files and database
 volume ["/data"]
 
 # /start runs it.
