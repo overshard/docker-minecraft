@@ -12,7 +12,8 @@ then
     curl "https://s3.amazonaws.com/Minecraft.Download/versions/1.8.1/minecraft_server.1.8.1.jar" -o /data/minecraft_server.jar
 fi
 
-if ( ! -f /data/eula.txt); then
+if [ ! -f /data/eula.txt ]
+then
     echo "eula=true" > /data/eula.txt
 fi
 
