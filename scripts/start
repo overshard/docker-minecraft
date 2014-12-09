@@ -17,6 +17,5 @@ then
     echo "eula=true" > /data/eula.txt
 fi
 
-
-java -Xmx2G -XX:MaxPermSize=256M -jar minecraft_server.jar nogui
+cd /data/; java -Xmx2G -XX:MaxPermSize=256M -jar minecraft_server.jar nogui
 
