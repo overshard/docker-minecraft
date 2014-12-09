@@ -5,39 +5,37 @@
 # (http://minecraft.net/).
 #
 # Authors: Isaac Bythewood
-# Updated: Aug 6th, 2014
+# Updated: Dec 9th, 2014
 # Require: Docker (http://www.docker.io/)
 # -----------------------------------------------------------------------------
 
 
 # Base system is the LTS version of Ubuntu.
-from   ubuntu:14.04
+FROM   ubuntu:14.04
 
 
 # Make sure we don't get notifications we can't answer during building.
-env    DEBIAN_FRONTEND noninteractive
+ENV    DEBIAN_FRONTEND noninteractive
 
 
 # Download and install everything from the repos.
-run    apt-get --yes update; apt-get --yes upgrade
-run    apt-get --yes install curl openjdk-7-jre-headless supervisor
+RUN    apt-get --yes update; apt-get --yes upgrade
+RUN    apt-get --yes install curl openjdk-7-jre-headless
 
 
 # Load in all of our config files.
-add    ./supervisor/supervisord.conf /etc/supervisor/supervisord.conf
-add    ./supervisor/conf.d/minecraft.conf /etc/supervisor/conf.d/minecraft.conf
-add    ./scripts/start /start
+ADD    ./scripts/start /start
 
 
 # Fix all permissions
-run	   chmod +x /start
+RUN	   chmod +x /start
 
 
 # 25565 is for minecraft
-expose 25565
+EXPOSE 25565
 
 # /data contains static files and database
-volume ["/data"]
+VOLUME ["/data"]
 
 # /start runs it.
-cmd    ["/start"]
+CMD    ["/start"]
