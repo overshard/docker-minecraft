@@ -20,7 +20,7 @@ env    DEBIAN_FRONTEND noninteractive
 
 # Download and install everything from the repos.
 run    apt-get --yes update; apt-get --yes upgrade
-run	   apt-get --yes install curl openjdk-7-jre-headless supervisor
+run    apt-get --yes install curl openjdk-7-jre-headless supervisor
 
 
 # Load in all of our config files.
