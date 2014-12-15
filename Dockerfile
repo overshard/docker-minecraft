@@ -5,7 +5,7 @@
 # (http://minecraft.net/).
 #
 # Authors: Isaac Bythewood
-# Updated: Dec 9th, 2014
+# Updated: Dec 14th, 2014
 # Require: Docker (http://www.docker.io/)
 # -----------------------------------------------------------------------------
 
@@ -19,8 +19,11 @@ ENV    DEBIAN_FRONTEND noninteractive
 
 
 # Download and install everything from the repos.
-RUN    apt-get --yes update; apt-get --yes upgrade
-RUN    apt-get --yes install curl openjdk-7-jre-headless
+RUN    apt-get --yes update; apt-get --yes upgrade; apt-get --yes install software-properties-common
+RUN    sudo apt-add-repository --yes ppa:webupd8team/java; apt-get --yes update
+RUN    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections  && \
+       echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections  && \
+       apt-get --yes install curl oracle-java8-installer
 
 
 # Load in all of our config files.

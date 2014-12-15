@@ -3,7 +3,7 @@
 # docker-minecraft /start script
 #
 # Authors: Isaac Bythewood
-# Updated: Dec 9th, 2014
+# Updated: Dec 14th, 2014
 # -----------------------------------------------------------------------------
 
 
@@ -17,5 +17,5 @@ then
     echo "eula=true" > /data/eula.txt
 fi
 
-cd /data/; java -Xmx2G -XX:MaxPermSize=256M -jar minecraft_server.jar nogui
+cd /data/; java -Xmx2G -jar minecraft_server.jar nogui
 
