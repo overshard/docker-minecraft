@@ -47,7 +47,7 @@ image name which is `overshard/minecraft:latest`.
 ## Connecting to the minecraft server console
 
 To do this in a convenient way you should install a application called
-[nsenter][3] and some conviniet helper scripts.
+[nsenter][3] and some convenient helper scripts.
 If you want to install nsenter to your /usr/local/bin, just do this:
 
     docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter
