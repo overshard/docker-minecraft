@@ -44,43 +44,6 @@ image name which is `overshard/minecraft:latest`.
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging
  + `-p` is the port it connects to, `-p=host_port:docker_port`
 
-## Connecting to the minecraft server console
-
-To do this in a convenient way you should install a application called
-[nsenter][3] and some convenient helper scripts.
-If you want to install nsenter to your /usr/local/bin, just do this:
-
-    docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter
-
-This will actually create a docker machine for you where the command is 
-being built. If that sounds to scary read the instructions on the webpage.
-
-After installing you will have a script called docker-enter that uses
-nsenter which lets you connect to a live container and run commands. 
-Since we are using supervisor to run the server we will connect to 
-supervisorctl and from there do whats needed like restarting, 
-connecting to the shell etc.
-
-To use docker-enter you will need the name of the container.
-
-    sudo docker-enter my_awesome_container supervisorctl
-
-Now you will be able to control the supervisor process that is previously
-defined and called minecraft.
-
-To connect to the shell of the server just type.
-
-    fg minecraft
-
-Now you are able to control the server just like normally.
-When you are done, just press Ctrl+c to send it to the background again.
-
-To disconnect from supervisorctl just type `exit` and press enter.
-Now you are disconnected from the container as well.
-
-
 
 [0]: http://www.docker.io/gettingstarted/
 [1]: http://minecraft.net/
-[3]: https://github.com/jpetazzo/nsenter
-
