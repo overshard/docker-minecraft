@@ -3,7 +3,7 @@
 # docker-minecraft /start script
 #
 # Authors: Isaac Bythewood
-# Updated: Dec 14th, 2014
+# Updated: Oct 11th, 2015
 # -----------------------------------------------------------------------------
 
 
@@ -18,4 +18,3 @@ then
 fi
 
 cd /data/; java -Xmx2G -jar minecraft_server.jar nogui
-
