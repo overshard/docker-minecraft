@@ -36,6 +36,12 @@ image name which is `overshard/minecraft:latest`.
     sudo docker start <container_id>
     sudo docker stop <container_id>
 
+You can use --name="<container_name>" as the run option, so you can use the name instead of the <container_id>
+    
+    sudo docker start <container_name>
+    sudo docker stop <container_name>
+
+
 
 ### Notes on the run command
 
