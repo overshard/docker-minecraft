@@ -3,14 +3,15 @@
 # docker-minecraft /start script
 #
 # Authors: Isaac Bythewood
-# Updated: Dec 14th, 2014
+# Updated: Apr 13th, 2018
 # -----------------------------------------------------------------------------
 
-
-if [ ! -f /data/minecraft_server.jar ]
+if [ ! -f /data/minecraft_server.1.12.2.jar ]
 then
-    curl "https://s3.amazonaws.com/Minecraft.Download/versions/1.11.2/minecraft_server.1.11.2.jar" -o /data/minecraft_server.jar
+    echo Downloading Minecraft
+    curl "https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar" -o /data/minecraft_server.1.12.2.jar
 fi
+cp -f /data/minecraft_server.1.12.2.jar /data/minecraft_server.jar
 
 if [ ! -f /data/eula.txt ]
 then

@@ -1,0 +1,8 @@
+version: '3'
+services:
+  minecraft:
+    image: niemd/docker-minecraft:1.12.2
+    volumes:
+      - ./data:/data
+    ports:
+      - 25565:25565
