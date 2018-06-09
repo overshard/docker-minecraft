@@ -1,0 +1,19 @@
+sudo: required
+
+env:
+  - MINECRAFT_MAJOR_SERVER_VERSION=1.12
+  - MINECRAFT_MINOR_SERVER_VERSION=1.12.2
+
+services:
+  - docker
+
+script:
+  - docker build -t gregoireweber/minecraft-server:latest .
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+      docker tag gregoireweber/minecraft-server:latest gregoireweber/minecraft-server:$MINECRAFT_MINOR_SERVER_VERSION;
+      docker tag gregoireweber/minecraft-server:latest gregoireweber/minecraft-server:$MINECRAFT_MAJOR_SERVER_VERSION;
+      docker push gregoireweber/minecraft-server:latest;
+      docker push gregoireweber/minecraft-server:$MINECRAFT_MINOR_SERVER_VERSION;
+      docker push gregoireweber/minecraft-server:$MINECRAFT_MAJOR_SERVER_VERSION;
+    fi

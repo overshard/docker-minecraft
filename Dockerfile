@@ -1,44 +1,18 @@
-# -----------------------------------------------------------------------------
-# docker-minecraft
-#
-# Builds a basic docker image that can run a Minecraft server
-# (http://minecraft.net/).
-#
-# Authors: Isaac Bythewood
-# Updated: Dec 14th, 2014
-# Require: Docker (http://www.docker.io/)
-# -----------------------------------------------------------------------------
+FROM        alpine:3.6
+MAINTAINER  Grégoire Weber
 
+ENV         MINECRAFT_VERSION 1.12.2
+ENV         MINECRAFT_SERVEUR_URL "https://s3.amazonaws.com/Minecraft.Download/versions/${MINECRAFT_VERSION}/minecraft_server.${MINECRAFT_VERSION}.jar"
 
-# Base system is the LTS version of Ubuntu.
-FROM   ubuntu:14.04
+VOLUME      /minecraft/data
+WORKDIR     /minecraft
+EXPOSE      25565
 
+RUN         apk --no-cache --update add openjdk8-jre curl
 
-# Make sure we don't get notifications we can't answer during building.
-ENV    DEBIAN_FRONTEND noninteractive
+RUN         curl ${MINECRAFT_SERVEUR_URL} -o ./minecraft_server.${MINECRAFT_VERSION}.jar && \
+            chmod +x ./minecraft_server.${MINECRAFT_VERSION}.jar
 
+COPY        ./startup.sh .
 
-# Download and install everything from the repos.
-RUN    apt-get --yes update; apt-get --yes upgrade; apt-get --yes install software-properties-common
-RUN    sudo apt-add-repository --yes ppa:webupd8team/java; apt-get --yes update
-RUN    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections  && \
-       echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections  && \
-       apt-get --yes install curl oracle-java8-installer ; apt-get clean
-
-
-# Load in all of our config files.
-ADD    ./scripts/start /start
-
-
-# Fix all permissions
-RUN    chmod +x /start
-
-
-# 25565 is for minecraft
-EXPOSE 25565
-
-# /data contains static files and database
-VOLUME ["/data"]
-
-# /start runs it.
-CMD    ["/start"]
+CMD         ["./startup.sh"]
