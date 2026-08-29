@@ -1,4 +1,4 @@
-> **Archived.** This project is no longer in use and no longer maintained.
+> **Archived.** This project is no longer in use and no longer maintained. Last updated January 2017.
 
 # docker-minecraft
 
