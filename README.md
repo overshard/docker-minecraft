@@ -1,3 +1,5 @@
+> **Archived.** This project is no longer in use and no longer maintained.
+
 # docker-minecraft
 
 A nice and easy way to get a Minecraft server up and running using docker. For
